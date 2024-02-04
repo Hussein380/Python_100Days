@@ -29,4 +29,16 @@ def encrypt(text, shift):
     ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
 
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
-encrypt(text, shift)
+
+def decrypt(cypher_text, shift_amount):
+    new_text = ""
+    for letter in text:
+        position = alphabet.index(letter)
+        new_position = position - shift_amount
+        new_text _= alphabet[new_position]
+    print(f"The decoded text is {new_text}")
+
+if direction == "encode":
+    encrypt(text, shift)
+elif direction == "decode":
+    decrypt(cypher_text = text, shift_amount = shift)
