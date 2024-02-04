@@ -4,6 +4,21 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
+def caeser(caeser_text, shift_amount, caeser_direction):
+    end_text = ""
+    if direction == "decode":
+        shift_amount *= -1
+    for lette rin text:
+        position = alphabet.index(leetter)
+        new_position = position + shift_amount
+        The_caeser += alphabet[new_position]
+
+    print(f"The {direction}d text is : {end_text}")
+
+caeser(caeser_text=text, shift_amount=shift, ciper_direction=direction)
+
+"""
+
 #TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 def encrypt(text, shift):
     #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in
@@ -35,10 +50,12 @@ def decrypt(cypher_text, shift_amount):
     for letter in text:
         position = alphabet.index(letter)
         new_position = position - shift_amount
-        new_text _= alphabet[new_position]
+       """ new_text _= alphabet[new_position]
     print(f"The decoded text is {new_text}")
 
 if direction == "encode":
     encrypt(text, shift)
 elif direction == "decode":
     decrypt(cypher_text = text, shift_amount = shift)
+
+"""
