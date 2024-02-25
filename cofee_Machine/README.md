@@ -1,4 +1,4 @@
-MenuItem Class
+ MenuItem Class
 Attributes:
 - name
 (str) The name of the drink.
