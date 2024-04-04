@@ -4,6 +4,8 @@ import random
 
 
 WINDOW_COLOR = "#211951"
+BG_COLOR_CHANGE_INTERVAL = 5000  # milliseconds
+
 
 # Password Generator Function
 def generate_password():
@@ -51,12 +53,21 @@ def save_password():
             website_entry.delete(0, END)
             pasword_entry.delete(0, END)
 
+
+def change_backgroud_color():
+    color = "#{:06x}".format(random.randint(0,  0xFFFFFF))
+    window.config(bg=color)
+    window.after(BG_COLOR_CHANGE_INTERVAL)
 # UI Setup
 window = Tk()
 window.config(padx=50, pady=50)
 window.title("Password Manager")
 
-canvas = Canvas(width=200, height=200)
+#background_color change
+change_backgroud_color()
+
+
+canvas = Canvas(width=200, height=200, bg=WINDOW_COLOR)
 logo_img = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
